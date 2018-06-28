@@ -195,21 +195,21 @@ class OneLogin_Saml2_Response(object):
 
                 # Checks destination
                 destination = self.document.get('Destination', None)
-                if destination:
-                    if not destination.startswith(current_url):
-                        # TODO: Review if following lines are required, since we can control the
-                        # request_data
-                        #  current_url_routed = OneLogin_Saml2_Utils.get_self_routed_url_no_query(request_data)
-                        #  if not destination.startswith(current_url_routed):
-                        raise OneLogin_Saml2_ValidationError(
-                            'The response was received at %s instead of %s' % (current_url, destination),
-                            OneLogin_Saml2_ValidationError.WRONG_DESTINATION
-                        )
-                elif destination == '':
-                    raise OneLogin_Saml2_ValidationError(
-                        'The response has an empty Destination value',
-                        OneLogin_Saml2_ValidationError.EMPTY_DESTINATION
-                    )
+#                 if destination:
+#                     if not destination.startswith(current_url):
+#                         # TODO: Review if following lines are required, since we can control the
+#                         # request_data
+#                         #  current_url_routed = OneLogin_Saml2_Utils.get_self_routed_url_no_query(request_data)
+#                         #  if not destination.startswith(current_url_routed):
+#                         raise OneLogin_Saml2_ValidationError(
+#                             'The response was received at %s instead of %s' % (current_url, destination),
+#                             OneLogin_Saml2_ValidationError.WRONG_DESTINATION
+#                         )
+#                 elif destination == '':
+#                     raise OneLogin_Saml2_ValidationError(
+#                         'The response has an empty Destination value',
+#                         OneLogin_Saml2_ValidationError.EMPTY_DESTINATION
+#                     )
 
                 # Checks audience
                 valid_audiences = self.get_audiences()
