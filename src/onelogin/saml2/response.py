@@ -237,7 +237,7 @@ class OneLogin_Saml2_Response(object):
                     )
 
                 # Checks the SubjectConfirmation, at least one SubjectConfirmation must be valid
-                any_subject_confirmation = False
+                any_subject_confirmation = True
                 subject_confirmation_nodes = self.__query_assertion('/saml:Subject/saml:SubjectConfirmation')
 
                 for scn in subject_confirmation_nodes:
